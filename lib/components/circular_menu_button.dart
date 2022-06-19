@@ -33,9 +33,10 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   Widget build(BuildContext context) => Flow(
         delegate: FlowMenuDelegate(controller: controller),
         children: [
-          buildButton(Icons.person_add),
+          buildButton(Icons.person_add_alt_sharp),
+          buildButton(Icons.group_add),
+          buildButton(Icons.admin_panel_settings),
           buildButton(Icons.settings),
-          buildButton(Icons.person),
           buildAnimatedButton(AnimatedIcons.menu_close),
         ]//.map<Widget>(buildButton).toList(),
       );
