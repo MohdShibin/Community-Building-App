@@ -1,3 +1,4 @@
+import '../components/circular_menu_button.dart';
 import '../components/chat_list_item.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: const CircularMenuButton(),
       backgroundColor: Color(0xffF4F4F4),
       //backgroundColor: Colors.black,
       // appBar: AppBar(
