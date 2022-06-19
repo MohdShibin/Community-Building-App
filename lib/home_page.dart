@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: const CircularMenuButton(),
       backgroundColor: Color(0xffF4F4F4),
-      //backgroundColor: Colors.black,
+      //backgroundColor: Color(0xffEEEEEE),
       // appBar: AppBar(
       //   title: Text('AppName'),
       //   centerTitle: true,

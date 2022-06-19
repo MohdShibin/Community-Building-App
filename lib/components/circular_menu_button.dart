@@ -30,55 +30,55 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   }
 
   @override
-  Widget build(BuildContext context) => Flow(
-        delegate: FlowMenuDelegate(controller: controller),
-        children: [
-          buildButton(Icons.person_add_alt_sharp),
-          buildButton(Icons.group_add),
-          buildButton(Icons.admin_panel_settings),
-          buildButton(Icons.settings),
-          buildAnimatedButton(AnimatedIcons.menu_close),
-        ]//.map<Widget>(buildButton).toList(),
-      );
+  Widget build(BuildContext context) =>
+      Flow(delegate: FlowMenuDelegate(controller: controller), children: [
+        buildButton(Icons.person_add_alt_sharp),
+        buildButton(Icons.group_add),
+        buildButton(Icons.admin_panel_settings),
+        buildButton(Icons.settings),
+        buildAnimatedButton(AnimatedIcons.menu_close),
+      ] //.map<Widget>(buildButton).toList(),
+          );
 
-/*
-  Widget buildButton(IconData icon) =>
-      InkWell(
-        onTap: () {
-          if(controller.status == AnimationStatus.completed) {
-            controller.reverse();
-          } else {
-            controller.forward();
-          }
-        },
+  Widget buildButton(IconData icon) => InkWell(
+        onTap: () {},
         child: Container(
           width: buttonSize,
           height: buttonSize,
-          color: Colors.deepPurple,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(45.0),
+            gradient: RadialGradient(
+              colors: [
+                Colors.white,
+                Colors.grey.shade400,
+              ],
+              stops: [0.8,1],
+            )
+          ),
           child: Icon(
             icon,
-            color: Colors.black,
+            color: Colors.blue,
             size: 35,
           ),
         ),
       );
-}
-*/
-  Widget buildButton(IconData icon) => SizedBox(
-        width: buttonSize,
-        height: buttonSize,
-        child: FloatingActionButton(
-          elevation: 0,
-          child: Icon(
-            icon,
-            color: Colors.black,
-            size: 35,
-          ),
-          isExtended: true,
-          onPressed: () {
-          },
-        ),
-      );
+
+  // Widget buildButton(IconData icon) => SizedBox(
+  //       width: buttonSize,
+  //       height: buttonSize,
+  //       child: FloatingActionButton(
+  //         elevation: 0,
+  //         child: Icon(
+  //           icon,
+  //           color: Colors.black,
+  //           size: 35,
+  //         ),
+  //         isExtended: true,
+  //         onPressed: () {
+  //         },
+  //       ),
+  //     );
 
   Widget buildAnimatedButton(AnimatedIconData icon) => SizedBox(
         width: buttonSize,
@@ -88,9 +88,9 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
           child: AnimatedIcon(
             icon: icon,
             progress: controller,
-            color: Colors.black,
+            color: Colors.white,
             size: 35,
-           ),
+          ),
           isExtended: true,
           onPressed: () {
             if (controller.status == AnimationStatus.completed) {
@@ -100,7 +100,7 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
             }
           },
         ),
-      );    
+      );
 }
 
 class FlowMenuDelegate extends FlowDelegate {
@@ -128,10 +128,11 @@ class FlowMenuDelegate extends FlowDelegate {
 
       context.paintChild(
         i,
-        transform: Matrix4.identity()..translate(x, y, 0)
-        ..translate(buttonSize/2,buttonSize/2)
-        //..rotateZ((isLastItem ? 180 * (1-controller.value) *pi : 0.0 )/180)
-        ..translate(-buttonSize/2,-buttonSize/2),
+        transform: Matrix4.identity()
+          ..translate(x, y, 0)
+          ..translate(buttonSize / 2, buttonSize / 2)
+          //..rotateZ((isLastItem ? 180 * (1-controller.value) *pi : 0.0 )/180)
+          ..translate(-buttonSize / 2, -buttonSize / 2),
       );
     }
   }
