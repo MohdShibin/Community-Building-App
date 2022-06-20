@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/settings.dart';
 import 'dart:math';
 
 const double buttonSize = 60.0;
@@ -32,16 +33,21 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   @override
   Widget build(BuildContext context) =>
       Flow(delegate: FlowMenuDelegate(controller: controller), children: [
-        buildButton(Icons.person_add_alt_sharp),
-        buildButton(Icons.group_add),
-        buildButton(Icons.admin_panel_settings),
-        buildButton(Icons.settings),
+        buildButton(Icons.person_add_alt_sharp,(){}),
+        buildButton(Icons.group_add,(){}),
+        buildButton(Icons.admin_panel_settings,(){}),
+        buildButton(Icons.settings,(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context)=> const Settings())
+            );
+        }),
         buildAnimatedButton(AnimatedIcons.menu_close),
-      ] //.map<Widget>(buildButton).toList(),
-          );
+      ]
+      );
 
-  Widget buildButton(IconData icon) => InkWell(
-        onTap: () {},
+  Widget buildButton(IconData icon,VoidCallback onTap) => InkWell(
+        onTap: onTap,
         child: Container(
           width: buttonSize,
           height: buttonSize,
