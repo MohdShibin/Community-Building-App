@@ -50,7 +50,7 @@ class ChatListItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.0,vertical: 4.0),
       child: ListTile(
       leading: CircleAvatar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         maxRadius: 30,
       ),
       title: Text(name!),

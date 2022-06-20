@@ -1,5 +1,6 @@
-import '../components/circular_menu_button.dart';
-import '../components/chat_list_item.dart';
+import '../../components/circular_menu_button.dart';
+import '../../components/chat_list_item.dart';
+import '../components/top_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,30 +28,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
-              height: 60.0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(
-                    width: 48.0
-                  ),
-                  const Text(
-                    'AppName',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.search,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            TopAppBar(isIconLeft: false, OnChanged: (){}, title: "AppName", icon: Icons.search),
             Flexible(
               child: ListView(
                 children: [
@@ -58,9 +36,9 @@ class HomePage extends StatelessWidget {
                   ChatListItem(name: 'Friend Nmae', subtitle: 'subtitle'),
                   ChatTypeNameTile('Communities'),
                   ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
-                  ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
-                  ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
-                  ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Community 2', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Community 3', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Community 4', subtitle: 'subtitle'),
                 ],
               ),
             ),
@@ -75,7 +53,7 @@ class HomePage extends StatelessWidget {
         child: SizedBox(
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
             ),
