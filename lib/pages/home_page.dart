@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: const CircularMenuButton(),
       backgroundColor: Color(0xffF4F4F4),
-      //backgroundColor: Color(0xffEEEEEE),
+      //3backgroundColor: Color(0xff000000),
       // appBar: AppBar(
       //   title: Text('AppName'),
       //   centerTitle: true,
@@ -28,12 +28,16 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            TopAppBar(isIconLeft: false, OnChanged: (){}, title: "AppName", icon: Icons.search),
+            TopAppBar(
+                isIconLeft: false,
+                OnChanged: () {},
+                title: "AppName",
+                icon: Icons.search),
             Flexible(
               child: ListView(
                 children: [
                   ChatTypeNameTile('Friend'),
-                  ChatListItem(name: 'Friend Nmae', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Friend Name', subtitle: 'subtitle'),
                   ChatTypeNameTile('Communities'),
                   ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
                   ChatListItem(name: 'Community 2', subtitle: 'subtitle'),

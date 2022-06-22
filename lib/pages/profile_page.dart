@@ -1,8 +1,8 @@
 import '../components/top_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({Key? key}) : super(key: key);
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Settings extends StatelessWidget {
               OnChanged: () {
                 Navigator.pop(context);
               },
-              title: "Settings",
+              title: "Profile",
               icon: Icons.arrow_back,
             ),
             Flexible(

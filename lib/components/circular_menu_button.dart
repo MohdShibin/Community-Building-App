@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../pages/settings.dart';
+import '../pages/settings_page.dart';
+import '../pages/profile_page.dart';
 import 'dart:math';
 
 const double buttonSize = 60.0;
@@ -33,35 +34,36 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   @override
   Widget build(BuildContext context) =>
       Flow(delegate: FlowMenuDelegate(controller: controller), children: [
-        buildButton(Icons.person_add_alt_sharp,(){}),
-        buildButton(Icons.group_add,(){}),
-        buildButton(Icons.admin_panel_settings,(){}),
-        buildButton(Icons.settings,(){
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context)=> const Settings())
-            );
-        }),
+        buildButton(Icons.person_add_alt_sharp, () {}),
+        buildButton(Icons.group_add, () {}),
+        buildButton(Icons.admin_panel_settings, () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const ProfilePage()));
+          }
+        ),
+        buildButton(Icons.settings, () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SettingsPage()));
+          }
+        ),
         buildAnimatedButton(AnimatedIcons.menu_close),
-      ]
-      );
+      ]);
 
-  Widget buildButton(IconData icon,VoidCallback onTap) => InkWell(
+  Widget buildButton(IconData icon, VoidCallback onTap) => InkWell(
         onTap: onTap,
         child: Container(
           width: buttonSize,
           height: buttonSize,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(45.0),
-            gradient: RadialGradient(
-              colors: [
-                Colors.white,
-                Colors.grey.shade400,
-              ],
-              stops: [0.8,1],
-            )
-          ),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(45.0),
+              gradient: RadialGradient(
+                colors: [
+                  Colors.white,
+                  Colors.grey.shade400,
+                ],
+                stops: [0.8, 1],
+              )),
           child: Icon(
             icon,
             color: Colors.blue,
@@ -137,7 +139,7 @@ class FlowMenuDelegate extends FlowDelegate {
         transform: Matrix4.identity()
           ..translate(x, y, 0)
           ..translate(buttonSize / 2, buttonSize / 2)
-          //..rotateZ((isLastItem ? 180 * (1-controller.value) *pi : 0.0 )/180)
+          //..rotateZ((isLastItem ? 180 * (1 - controller.value) * pi : 0.0) / 180)
           ..translate(-buttonSize / 2, -buttonSize / 2),
       );
     }

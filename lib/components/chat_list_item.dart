@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ChatListItem extends StatelessWidget {
   String? name;
   String? subtitle;
-  ChatListItem({@required this.name, @required this.subtitle});
+  ChatListItem({Key? key, @required this.name, @required this.subtitle}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     //   return GestureDetector(
@@ -47,21 +47,21 @@ class ChatListItem extends StatelessWidget {
     //   );
     // }
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0,vertical: 4.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.black,
-        maxRadius: 30,
-      ),
-      title: Text(name!),
-      subtitle: Text(subtitle!),
-      onTap: (){},
-      tileColor: Colors.white,
-      contentPadding: EdgeInsets.symmetric(vertical: 8.0,horizontal: 12.0),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        leading: CircleAvatar(
+          backgroundColor: Colors.black,
+          maxRadius: 30,
         ),
-    ),
+        title: Text(name!),
+        subtitle: Text(subtitle!),
+        onTap: () {},
+        tileColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
   }
 }
