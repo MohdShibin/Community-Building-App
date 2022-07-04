@@ -13,38 +13,43 @@ addCommunity(context) {
             ),
           ),
           contentPadding: const EdgeInsets.only(top: 10.0),
-          title: Text(
-            "Create Community",
-            style: TextStyle(fontSize: 24.0),
+          title: Center(
+            child: Text(
+              "Create Community",
+              style: TextStyle(fontSize: 24.0),
+            ),
           ),
           content: Container(
-            height: 200,
+            height: 350,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 32.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Enter Community name',
-                        labelText: 'Name',
-                      ),
+                  const TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter Community name',
+                      labelText: 'Name',
                     ),
                   ),
-                  Container(
+                  const TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter Community Description',
+                      labelText: 'Description',
+                    ),
+                  ),
+                  SizedBox(
                     width: double.infinity,
-                    height: 60,
-                    padding: const EdgeInsets.all(8.0),
+                    height: 45,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.black,
+                        primary: Color(0xff556080),
                       ),
                       child: const Text(
                         "Create",

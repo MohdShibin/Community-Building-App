@@ -1,3 +1,4 @@
+import 'package:community_app/components/add_friend_box.dart';
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
 import '../pages/profile_page.dart';
@@ -35,7 +36,9 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   @override
   Widget build(BuildContext context) =>
       Flow(delegate: FlowMenuDelegate(controller: controller), children: [
-        buildButton(Icons.person_add_alt_sharp, () {}),
+        buildButton(Icons.person_add_alt_sharp, () {
+          addFriend(context);
+        }),
         buildButton(Icons.group_add, () {
           addCommunity(context);
         }),
@@ -59,12 +62,12 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
               color: Colors.white,
               borderRadius: BorderRadius.circular(45.0),
               border: Border.all(
-                color: Color(0xff4C44D7),
+                color: Colors.black,
                 width: 2.0,
               )),
           child: Icon(
             icon,
-            color: Color(0xff4C44D7),
+            color: Colors.black,
             size: 35,
           ),
         ),
@@ -74,7 +77,7 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
         width: buttonSize,
         height: buttonSize,
         child: FloatingActionButton(
-          backgroundColor: Color(0xff4C44D7),
+          backgroundColor: Colors.black,
           elevation: 0,
           child: AnimatedIcon(
             icon: icon,
