@@ -10,21 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: const CircularMenuButton(),
-      backgroundColor: Color(0xffF4F4F4),
-      //3backgroundColor: Color(0xff000000),
-      // appBar: AppBar(
-      //   title: Text('AppName'),
-      //   centerTitle: true,
-      //   actions: [
-      //     IconButton(
-      //       onPressed: () {},
-      //       icon: const Icon(
-      //         Icons.search,
-      //       ),
-      //     ),
-      //   ],
-      //   elevation: 0.0,
-      // ),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
@@ -37,12 +23,14 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 children: [
                   ChatTypeNameTile('Friend'),
-                  ChatListItem(name: 'Friend Name', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Friend Name', subtitle: 'subtitle',isFriend: true),
                   ChatTypeNameTile('Communities'),
                   ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
                   ChatListItem(name: 'Community 2', subtitle: 'subtitle'),
                   ChatListItem(name: 'Community 3', subtitle: 'subtitle'),
                   ChatListItem(name: 'Community 4', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Community 5', subtitle: 'subtitle'),
+                  ChatListItem(name: 'Community 6', subtitle: 'subtitle'),
                 ],
               ),
             ),
@@ -64,4 +52,5 @@ class HomePage extends StatelessWidget {
           ),
         ),
       );
+  
 }

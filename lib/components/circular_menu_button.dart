@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
 import '../pages/profile_page.dart';
+import 'add_community_box.dart';
 import 'dart:math';
 
 const double buttonSize = 60.0;
@@ -35,17 +36,17 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   Widget build(BuildContext context) =>
       Flow(delegate: FlowMenuDelegate(controller: controller), children: [
         buildButton(Icons.person_add_alt_sharp, () {}),
-        buildButton(Icons.group_add, () {}),
+        buildButton(Icons.group_add, () {
+          addCommunity(context);
+        }),
         buildButton(Icons.admin_panel_settings, () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const ProfilePage()));
-          }
-        ),
+        }),
         buildButton(Icons.settings, () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const SettingsPage()));
-          }
-        ),
+        }),
         buildAnimatedButton(AnimatedIcons.menu_close),
       ]);
 
@@ -57,41 +58,23 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(45.0),
-              gradient: RadialGradient(
-                colors: [
-                  Colors.white,
-                  Colors.grey.shade400,
-                ],
-                stops: [0.8, 1],
+              border: Border.all(
+                color: Color(0xff4C44D7),
+                width: 2.0,
               )),
           child: Icon(
             icon,
-            color: Colors.blue,
+            color: Color(0xff4C44D7),
             size: 35,
           ),
         ),
       );
 
-  // Widget buildButton(IconData icon) => SizedBox(
-  //       width: buttonSize,
-  //       height: buttonSize,
-  //       child: FloatingActionButton(
-  //         elevation: 0,
-  //         child: Icon(
-  //           icon,
-  //           color: Colors.black,
-  //           size: 35,
-  //         ),
-  //         isExtended: true,
-  //         onPressed: () {
-  //         },
-  //       ),
-  //     );
-
   Widget buildAnimatedButton(AnimatedIconData icon) => SizedBox(
         width: buttonSize,
         height: buttonSize,
         child: FloatingActionButton(
+          backgroundColor: Color(0xff4C44D7),
           elevation: 0,
           child: AnimatedIcon(
             icon: icon,
