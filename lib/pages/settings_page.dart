@@ -1,3 +1,5 @@
+import 'package:community_app/components/settings_item.dart';
+
 import '../components/top_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +9,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF4F4F4),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
@@ -22,7 +24,9 @@ class SettingsPage extends StatelessWidget {
             Flexible(
               child: ListView(
                 children: [
-                  
+                  SettingsItem(title: 'Theme', icon: Icons.sunny),
+                  SettingsItem(title: 'Account managememnt', icon: Icons.account_box),
+                  SettingsItem(title: 'Log out', icon: Icons.logout),
                 ],
               ),
             ),
