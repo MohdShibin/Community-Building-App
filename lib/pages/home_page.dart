@@ -23,7 +23,10 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 children: [
                   ChatTypeNameTile('Friend'),
-                  ChatListItem(name: 'Friend Name', subtitle: 'subtitle',isFriend: true),
+                  ChatListItem(
+                      name: 'Friend Name',
+                      subtitle: 'subtitle',
+                      isFriend: true),
                   ChatTypeNameTile('Communities'),
                   ChatListItem(name: 'Community 1', subtitle: 'subtitle'),
                   ChatListItem(name: 'Community 2', subtitle: 'subtitle'),
@@ -41,7 +44,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget ChatTypeNameTile(String title) => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
         child: SizedBox(
           child: Text(
             title,
@@ -52,5 +55,4 @@ class HomePage extends StatelessWidget {
           ),
         ),
       );
-  
 }

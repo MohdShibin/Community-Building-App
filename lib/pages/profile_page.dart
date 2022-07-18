@@ -22,7 +22,10 @@ class ProfilePage extends StatelessWidget {
             Flexible(
               child: ListView(
                 children: [
-                  
+                  CircleAvatar(
+                    radius: 80,
+                    backgroundColor: Color(0xffF0F4F5),
+                  ),
                 ],
               ),
             ),
