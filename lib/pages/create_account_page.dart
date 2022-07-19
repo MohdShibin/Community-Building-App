@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/home_page.dart';
+import '../services/auth_service.dart';
 
 class CreateAccountPage extends StatefulWidget {
   @override
@@ -75,7 +76,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
             Container(
               width: size.width,
               alignment: Alignment.center,
-              child: field(size, "email", Icons.account_box, _email),
+              child: field(size, "email", Icons.email, _email),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 18.0),
@@ -112,7 +113,33 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   Widget customButton(Size size) {
     return GestureDetector(
       onTap: () {
+        if (_name.text.isNotEmpty &&
+            _email.text.isNotEmpty &&
+            _password.text.isNotEmpty) {
+          setState(() {
+            isLoading = true;
+          });
 
+          createAccount(_name.text, _email.text, _password.text).then((user) {
+            if (user != null) {
+              setState(() {
+                isLoading = false;
+              });
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => HomePage()),);
+              print("Account Created Sucessfull");
+            } else {
+              print("Login Failed");
+              setState(() {
+                isLoading = false;
+              });
+            }
+          });
+        }
+        else
+        {
+          print("Please enter Fields");
+        }
       },
       child: Container(
           height: size.height / 14,

@@ -1,5 +1,7 @@
 import 'package:community_app/pages/create_account_page.dart';
+import 'package:community_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import '../services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -66,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               width: size.width,
               alignment: Alignment.center,
-              child: field(size, "email", Icons.account_box, _email),
+              child: field(size, "email", Icons.email, _email),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 18.0),
@@ -104,7 +106,29 @@ class _LoginPageState extends State<LoginPage> {
   Widget customButton(Size size) {
     return GestureDetector(
       onTap: () {
+        if (_email.text.isNotEmpty && _password.text.isNotEmpty) {
+          setState(() {
+            isLoading = true;
+          });
 
+          logIn(_email.text, _password.text).then((user) {
+            if (user != null) {
+              print("Login Sucessfull");
+              setState(() {
+                isLoading = false;
+              });
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => HomePage()));
+            } else {
+              print("Login Failed");
+              setState(() {
+                isLoading = false;
+              });
+            }
+          });
+        } else {
+          print("Please fill form correctly");
+        }
       },
       child: Container(
           height: size.height / 14,
