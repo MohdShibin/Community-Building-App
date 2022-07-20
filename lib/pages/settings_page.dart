@@ -1,5 +1,5 @@
 import 'package:community_app/components/settings_item.dart';
-
+import '../services/auth_service.dart';
 import '../components/top_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -24,9 +24,9 @@ class SettingsPage extends StatelessWidget {
             Flexible(
               child: ListView(
                 children: [
-                  SettingsItem(title: 'Theme', icon: Icons.sunny),
-                  SettingsItem(title: 'Account managememnt', icon: Icons.account_box),
-                  SettingsItem(title: 'Log out', icon: Icons.logout),
+                  SettingsItem(title: 'Theme', icon: Icons.sunny,onTap: (){},),
+                  SettingsItem(title: 'Account managememnt', icon: Icons.account_box,onTap: (){},),
+                  SettingsItem(title: 'Log out', icon: Icons.logout,onTap: () => logOut(context),),
                 ],
               ),
             ),

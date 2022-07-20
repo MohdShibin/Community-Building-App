@@ -1,8 +1,8 @@
 import 'package:community_app/components/add_friend_box.dart';
+import 'package:community_app/pages/select_members_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
 import '../pages/profile_page.dart';
-import 'add_community_box.dart';
 import 'dart:math';
 
 const double buttonSize = 60.0;
@@ -39,8 +39,12 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
         buildButton(Icons.person_add_alt_sharp, () {
           addFriend(context);
         }),
+        // buildButton(Icons.group_add, () {
+        //   addCommunity(context);
+        // }),
         buildButton(Icons.group_add, () {
-          addCommunity(context);
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>  const SelectMembersPage()));
         }),
         buildButton(Icons.admin_panel_settings, () {
           Navigator.push(context,
