@@ -97,6 +97,7 @@ class _SelectMembersPageState extends State<SelectMembersPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Members"),
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -152,6 +153,9 @@ class _SelectMembersPageState extends State<SelectMembersPage> {
                 : ElevatedButton(
               onPressed: onSearch,
               child: Text("Search"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.deepOrangeAccent,
+              ),
             ),
             userMap != null
                 ? ListTile(
@@ -167,7 +171,8 @@ class _SelectMembersPageState extends State<SelectMembersPage> {
       ),
       floatingActionButton: membersList.length >= 2
           ? FloatingActionButton(
-        child: Icon(Icons.forward),
+        child: Icon(Icons.forward,color: Colors.deepOrangeAccent,),
+        backgroundColor: Colors.black,
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => CreateGroupPage(

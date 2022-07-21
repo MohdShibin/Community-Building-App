@@ -259,7 +259,7 @@ class _CommunityInfoPageState extends State<CommunityInfoPage> {
                   color: Colors.redAccent,
                 ),
                 title: Text(
-                  "Leave Group",
+                  "Leave Community",
                   style: TextStyle(
                     fontSize: size.width / 22,
                     fontWeight: FontWeight.w500,

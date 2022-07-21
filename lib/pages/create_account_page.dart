@@ -23,7 +23,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
         child: Container(
           height: size.height / 20,
           width: size.height / 20,
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            color: Colors.deepOrangeAccent,
+          ),
         ),
       )
           : SingleChildScrollView(
@@ -90,6 +92,9 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               height: size.height / 20,
             ),
             customButton(size),
+            SizedBox(
+              height: size.height / 40,
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
@@ -97,7 +102,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                 child: Text(
                   "Login",
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: Colors.deepOrangeAccent,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
@@ -146,7 +151,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           width: size.width / 1.2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Colors.blue,
+            color:  Colors.deepOrangeAccent,
           ),
           alignment: Alignment.center,
           child: Text(

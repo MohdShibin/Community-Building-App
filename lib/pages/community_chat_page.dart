@@ -39,6 +39,7 @@ class CommunityChatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(communityName),
+        backgroundColor: Colors.black,
         actions: [
           IconButton(
               onPressed: () => Navigator.of(context).push(
@@ -134,10 +135,22 @@ class CommunityChatPage extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 14),
               margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.blue,
+                borderRadius: chatMap['sendBy'] == _auth.currentUser!.displayName ?
+                  const BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ):const BorderRadius.only(
+                  bottomRight: Radius.circular(10),
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+                color: chatMap['sendBy'] == _auth.currentUser!.displayName ?
+                  Colors.deepOrangeAccent:Colors.black38,
               ),
               child: Column(
+                crossAxisAlignment: chatMap['sendBy'] == _auth.currentUser!.displayName ?
+                  CrossAxisAlignment.end:CrossAxisAlignment.start,
                 children: [
                   Text(
                     chatMap['sendBy'],

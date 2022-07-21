@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Text(
                 "Create Account",
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.deepOrangeAccent,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
           width: size.width / 1.2,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Colors.blue,
+            color: Colors.deepOrangeAccent,
           ),
           alignment: Alignment.center,
           child: Text(

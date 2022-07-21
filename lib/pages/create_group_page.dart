@@ -60,7 +60,8 @@ class _CreateGroupPageState extends State<CreateGroupPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Group Name"),
+        title: Text("Community Name"),
+        backgroundColor: Colors.black,
       ),
       body: isLoading
           ? Container(
@@ -84,7 +85,7 @@ class _CreateGroupPageState extends State<CreateGroupPage> {
               child: TextField(
                 controller: _groupName,
                 decoration: InputDecoration(
-                  hintText: "Enter Group Name",
+                  hintText: "Enter Community Name",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -97,7 +98,10 @@ class _CreateGroupPageState extends State<CreateGroupPage> {
           ),
           ElevatedButton(
             onPressed: createGroup,
-            child: Text("Create Group"),
+            child: Text("Create Community"),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.deepOrangeAccent,
+            ),
           ),
         ],
       ),

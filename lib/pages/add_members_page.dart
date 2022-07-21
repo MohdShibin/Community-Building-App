@@ -69,6 +69,7 @@ class _AddMembersPageState extends State<AddMembersPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Members"),
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -108,6 +109,9 @@ class _AddMembersPageState extends State<AddMembersPage> {
                 : ElevatedButton(
               onPressed: onSearch,
               child: Text("Search"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.deepOrangeAccent,
+              ),
             ),
             userMap != null
                 ? ListTile(
