@@ -48,7 +48,7 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
         }),
         buildButton(Icons.admin_panel_settings, () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()));
+              MaterialPageRoute(builder: (context) => ProfilePage()));
         }),
         buildButton(Icons.settings, () {
           Navigator.push(context,
