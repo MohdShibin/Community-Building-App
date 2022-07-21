@@ -3,7 +3,7 @@ import '../../components/chat_list_item.dart';
 import '../components/top_app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'group_chat_list_items.dart';
+import 'community_pages/group_chat_list_items.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

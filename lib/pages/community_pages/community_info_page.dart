@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:community_app/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'add_members_page.dart';
+import '/pages/community_pages/add_members_page.dart';
 
 class CommunityInfoPage extends StatefulWidget {
   final String communityId, communityName;

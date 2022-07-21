@@ -1,4 +1,4 @@
-import 'package:community_app/pages/community_chat_page.dart';
+import 'package:community_app/pages/community_pages/community_chat_page.dart';
 import 'package:flutter/material.dart';
 
 class ChatListItem extends StatelessWidget {

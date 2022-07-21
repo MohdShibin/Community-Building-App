@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/chat_list_item.dart';
+import '../../components/chat_list_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

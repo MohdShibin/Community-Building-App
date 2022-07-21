@@ -1,5 +1,5 @@
 import 'package:community_app/components/add_friend_box.dart';
-import 'package:community_app/pages/select_members_page.dart';
+import 'package:community_app/pages/community_pages/select_members_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
 import '../pages/profile_page.dart';

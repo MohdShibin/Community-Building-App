@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
-import 'home_page.dart';
+import '/pages/home_page.dart';
 
 class CreateGroupPage extends StatefulWidget {
   final List<Map<String, dynamic>> membersList;

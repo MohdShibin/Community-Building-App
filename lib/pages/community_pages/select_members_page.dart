@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'create_group_page.dart';
+import '/pages/community_pages/create_group_page.dart';
 
 class SelectMembersPage extends StatefulWidget {
   const SelectMembersPage({Key? key}) : super(key: key);

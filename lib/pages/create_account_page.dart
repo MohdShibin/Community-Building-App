@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../pages/home_page.dart';
-import '../services/auth_service.dart';
+import '/pages/home_page.dart';
+import '/services/auth_service.dart';
 
 class CreateAccountPage extends StatefulWidget {
   @override
