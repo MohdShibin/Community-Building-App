@@ -1,3 +1,5 @@
+import 'package:community_app/pages/chat_list.dart';
+import 'package:community_app/pages/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomePage()
+      home: ChatList(),
     );
   }
 }
