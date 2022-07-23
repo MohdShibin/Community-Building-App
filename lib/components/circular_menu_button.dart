@@ -1,8 +1,10 @@
 import 'package:community_app/components/add_friend_box.dart';
+import 'package:community_app/pages/community_pages/select_members_page.dart';
+import 'package:community_app/pages/friend_chat_pages/find_friend_page.dart';
+import 'package:community_app/pages/friend_chat_pages/friend_chat_page.dart';
 import 'package:flutter/material.dart';
 import '../pages/settings_page.dart';
 import '../pages/profile_page.dart';
-import 'add_community_box.dart';
 import 'dart:math';
 
 const double buttonSize = 60.0;
@@ -36,15 +38,23 @@ class _CircularMenuButtonState extends State<CircularMenuButton>
   @override
   Widget build(BuildContext context) =>
       Flow(delegate: FlowMenuDelegate(controller: controller), children: [
+        // buildButton(Icons.person_add_alt_sharp, () {
+        //   addFriend(context);
+        // }),
         buildButton(Icons.person_add_alt_sharp, () {
-          addFriend(context);
+           Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>  FindFriendPage()));
         }),
+        // buildButton(Icons.group_add, () {
+        //   addCommunity(context);
+        // }),
         buildButton(Icons.group_add, () {
-          addCommunity(context);
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>  const SelectMembersPage()));
         }),
         buildButton(Icons.admin_panel_settings, () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()));
+              MaterialPageRoute(builder: (context) => ProfilePage()));
         }),
         buildButton(Icons.settings, () {
           Navigator.push(context,
